@@ -14,7 +14,7 @@ struct User {
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn Error>> {
     let (client, connection) =
-        tokio_postgres::connect("postgresql://postgres:EFACP3TdNSvzsTwZ@db.itrjbhcplxynlnapzaco.supabase.co:5432/postgres", NoTls).await?;
+        tokio_postgres::connect("url", NoTls).await?;
 
     tokio::spawn(async move {
         if let Err(e) = connection.await {

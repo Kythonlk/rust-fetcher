@@ -8,7 +8,7 @@ struct Users {
 }
 
 fn main() -> Result<(), Error> {
-    let connection_url ="postgresql://postgres:EFACP3TdNSvzsTwZ@db.itrjbhcplxynlnapzaco.supabase.co:5432/postgres";
+    let connection_url ="url";
     let mut client = Client::connect(connection_url, NoTls)?;
 
     for row in client.query("SELECT id, name, email FROM users", &[])? {
